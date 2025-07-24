@@ -1,5 +1,5 @@
 
-DROP TABLE IF EXISTS bronze.crm_cust_info;
+DROP TABLE IF EXISTS bronze.crm_cust_info;--safe gaurd against redundant tbl error
 CREATE TABLE bronze.crm_cust_info(
 cst_id INT,
 cst_key VARCHAR(50),
@@ -54,3 +54,16 @@ cat VARCHAR(50),
 subcat VARCHAR(50),
 maintenance  VARCHAR(50)
 )
+/*
+Note There is no way to work with COPY cmd in postgre Query tool ,so you need to use PSQL to run
+the cmd for Bulk INSERT 
+commands->
+
+
+\COPY schema_name.tbl_name FROM 'file path' DELIMITER',' CSV Header
+
+
+for reference see(https://www.postgresql.org/docs/current/sql-copy.html)
+Reason => why copy cmd doesn't work with query tool is that it
+\COPY is a psql meta-command that runs on the client side. It reads the file from your local machine and sends data to the server.
+while in gui tools like pgAdmin ,the query is sent to server so file path needs to be on server .but that's not the case.
