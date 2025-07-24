@@ -67,3 +67,6 @@ for reference see(https://www.postgresql.org/docs/current/sql-copy.html)
 Reason => why copy cmd doesn't work with query tool is that it
 \COPY is a psql meta-command that runs on the client side. It reads the file from your local machine and sends data to the server.
 while in gui tools like pgAdmin ,the query is sent to server so file path needs to be on server .but that's not the case.
+
+
+BUT THE BEST WAY WHICH I USED IS TO CREATE AND RUN BATCH FILE->load_csv.bat
