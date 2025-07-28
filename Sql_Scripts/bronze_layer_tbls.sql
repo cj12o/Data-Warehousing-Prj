@@ -1,9 +1,4 @@
-/*
-===================================================================
-DDL Script to drop existing tables and recreate tables.
-Run this script tp redifine the DDL strucyure of 'bronze' tables
-===================================================================
-*/
+
 DROP TABLE IF EXISTS bronze.crm_cust_info;--safe gaurd against redundant tbl error
 CREATE TABLE bronze.crm_cust_info(
 cst_id INT,
