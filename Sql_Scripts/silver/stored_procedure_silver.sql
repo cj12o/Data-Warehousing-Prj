@@ -1,3 +1,21 @@
+/*
+==================================================================
+Stored Procedure :load_silver()  Bronze layer -> silver layer
+==================================================================
+Purpose:
+This stored procedure performs the ETL(Extract,load,transform) process 
+to populate the silver schema tables from brone schema tables
+
+-It truncates the table
+-Inserts cleaned and transformed data in silver layer
+
+===================================================================
+USAGE ->
+
+call load_silver()
+===================================================================
+*/
+
 CREATE OR REPLACE PROCEDURE silver.load_silver() 
 LANGUAGE plpgsql
 AS $$
